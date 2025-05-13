@@ -6,11 +6,11 @@ const sql = require('mysql2');
 app.use(express.urlencoded({extended:true}));
 
 const db = sql.createConnection({
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    database: process.env.MYSQL_DB,
-    password: process.env.MYSQL_PASSWORD,
-    port: process.env.MYSQL_PORT,
+    host: process.env.MYSQLHOST,
+    user: process.env.MYSQLUSER,
+    database: process.env.MYSQL_DATABASE,
+    password: process.env.MYSQL_ROOT_PASSWORD,
+    port: process.env.MYSQLPORT,
 });
 
 db.connect(err => {
