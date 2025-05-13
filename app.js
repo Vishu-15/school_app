@@ -5,7 +5,7 @@ const sql = require('mysql2');
 
 app.use(express.urlencoded({extended:true}));
 
-const db = sql.createConnection({
+const db = sql.createPool({
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
