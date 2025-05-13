@@ -59,7 +59,7 @@ app.get('/listSchools', (req, res) => {
     }
   
     db.query('SELECT * FROM schools', (err, results) => {
-      if (err) return res.status(500).json({ error: 'Error fetching database' });
+      if (err) return res.status(500).json({ error: err });
   
         const schoolsWithDistance = results.map((school) => {
             const distance = getDistance(userLat, userLon, school.latitude, school.longitude);
