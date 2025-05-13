@@ -16,9 +16,12 @@ const db = sql.createPool({
     }
 });
 
-db.connect(err => {
-    if (err) throw err;
-    console.log('MySQL Connected');
+db.query('SELECT 1', (err) => {
+    if (err) {
+      console.error('Database connection failed:', err);
+    } else {
+      console.log('MySQL Connected');
+    }
 });
 
 const toRad = (deg)=>{
